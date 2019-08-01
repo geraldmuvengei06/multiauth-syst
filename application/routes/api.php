@@ -16,3 +16,21 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['prefix' => '/'], function(){
+
+    Route::apiResource('campus', "CampusController");
+
+    Route::apiResource('departments', "DepartmentController");
+
+    Route::apiResource('courses', "CourseController");
+
+    Route::apiResource('classes', "KlassController");
+
+    Route::apiResource('units', "UnitController");
+
+    Route::apiResource('sessions', "SessionController");
+
+    Route::apiResource('exams', "ExamController");
+
+});
