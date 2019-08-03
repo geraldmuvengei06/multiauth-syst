@@ -5,17 +5,17 @@ use Faker\Generator as Faker;
 $factory->define(App\Models\Student::class, function (Faker $faker) {
     return [
         //
-        'first' => $faker->name,
+        'first' => $faker->title,
 
-        'last' => $faker->name, 
+        'last' => $faker->lastName, 
 
-        'surname' => $faker->name, 
+        'surname' => $faker->lastName, 
 
         'admission_number' => $faker->randomNumber( $nbDigits = 4, $strict = true), 
 
-        'phone' => $faker->randomNumber( $nbDigits = 9), 
+        'phone' => $faker->e164PhoneNumber, 
 
-        'email' => $faker->email, 
+        'email' => $faker->safeEmail, 
 
         'date_of_admission' => NOW(), 
 

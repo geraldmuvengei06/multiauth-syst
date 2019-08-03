@@ -5,13 +5,13 @@ use Faker\Generator as Faker;
 $factory->define(App\Models\School::class, function (Faker $faker) {
     return [
 
-        'name' => $faker->word,
+        'name' => $faker->company,
 
         'address' => $faker->address,
 
-        'phone' => $faker->randomNumber( $nbDigits = 9),
+        'phone' => $faker->tollFreePhoneNumber,
 
-        'email' => $faker->email,
+        'email' => $faker->companyEmail,
 
         'logo' => 'logo.png',
 
